@@ -4,10 +4,6 @@ version      = "0.1.0"
 edition      = "2021"
 rust-version = "1.76.0"
 
-[[bin]]
-name = "firmware"
-path = "src/bin/firmware.rs"
-
 [dependencies]
 defmt            = "0.3.8"
 defmt-rtt        = "0.4.1"
