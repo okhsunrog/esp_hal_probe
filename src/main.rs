@@ -29,7 +29,6 @@ async fn monitor_pins(
             Either::First(_) => info!("Rising edge detected on Pin 4!"),
             Either::Second(_) => info!("Rising edge detected on Pin 5!"),
         }
-        Timer::after(Duration::from_millis(100)).await;
     }
 }
 
