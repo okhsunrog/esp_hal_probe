@@ -639,6 +639,7 @@ dependencies = [
  "defmt",
  "defmt-rtt",
  "embassy-executor",
+ "embassy-futures",
  "embassy-time",
  "esp-backtrace",
  "esp-hal",
