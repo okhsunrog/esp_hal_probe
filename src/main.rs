@@ -5,23 +5,25 @@
 use defmt::info;
 use defmt_rtt as _;
 use embassy_executor::Spawner;
+use embassy_futures::select::{select, Either};
 use embassy_time::{Duration, Timer};
 use esp_backtrace as _;
 use esp_hal::{
     clock::ClockControl,
+    gpio::{GpioPin, Input, Io, Pull},
     peripherals::Peripherals,
     prelude::*,
     rtc_cntl::Rtc,
     system::SystemControl,
     timer::{timg::TimerGroup, OneShotTimer},
 };
-use esp_hal::gpio::{GpioPin, Input, Io, Pull};
 use static_cell::make_static;
 
-use embassy_futures::select::{select, Either};
-
 #[embassy_executor::task]
-async fn monitor_pins(mut input4: Input<'static, GpioPin<4>>, mut input5: Input<'static, GpioPin<5>>) {
+async fn monitor_pins(
+    mut input4: Input<'static, GpioPin<4>>,
+    mut input5: Input<'static, GpioPin<5>>,
+) {
     loop {
         match select(input4.wait_for_rising_edge(), input5.wait_for_rising_edge()).await {
             Either::First(_) => info!("Rising edge detected on Pin 4!"),
@@ -53,7 +55,7 @@ async fn main(spawner: Spawner) {
     let input5: Input<GpioPin<5>> = Input::new(io.pins.gpio5, Pull::Down);
     esp_hal_embassy::init(&clocks, timers);
     info!("Embassy initialized!");
-    
+
     spawner.spawn(monitor_pins(input4, input5)).unwrap();
 
     // Periodically feed the RWDT watchdog timer when our tasks are not running:
