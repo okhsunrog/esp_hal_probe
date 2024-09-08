@@ -575,7 +575,6 @@ dependencies = [
  "esp-backtrace",
  "esp-hal",
  "esp-hal-embassy",
- "static_cell",
 ]
 
 [[package]]

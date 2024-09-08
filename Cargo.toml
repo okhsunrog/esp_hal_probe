@@ -12,7 +12,6 @@ embassy-time     = { version = "0.3",  features = ["generic-queue-8"] }
 esp-backtrace    = { version = "0.14", features = ["esp32c3", "defmt", "exception-handler", "panic-handler"] }
 esp-hal          = { version = "0.20", features = ["esp32c3", "defmt"] }
 esp-hal-embassy  = { version = "0.3",  features = ["esp32c3", "defmt"] }
-static_cell      = { version = "2.1",  features = ["nightly"] }
 
 [profile.release]
 codegen-units    = 1
