@@ -1,17 +1,22 @@
+//! embassy hello world
+//!
+//! This is an example of running the embassy executor with multiple tasks
+//! concurrently.
+
+//% CHIPS: esp32 esp32c2 esp32c3 esp32c6 esp32h2 esp32s2 esp32s3
+//% FEATURES: embassy esp-hal-embassy/integrated-timers
+
 #![no_std]
 #![no_main]
 
-use defmt::info;
-use defmt_rtt as _;
 use embassy_executor::Spawner;
 use embassy_time::{Duration, Timer};
-use esp_backtrace as _;
-use esp_hal::{
-    clock::ClockControl,
-    peripherals::Peripherals,
-    system::SystemControl,
-    timer::timg::TimerGroup,
-};
+use defmt::info;
+#[allow(unused)]
+use {esp_backtrace as _, defmt_rtt as _};
+use esp_hal::Blocking;
+use esp_hal::peripherals::TIMG0;
+use esp_hal::timer::timg::TimerGroup;
 
 #[embassy_executor::task]
 async fn run() {
@@ -23,18 +28,17 @@ async fn run() {
 
 #[esp_hal_embassy::main]
 async fn main(spawner: Spawner) {
-    info!("Init!");
-    let peripherals = Peripherals::take();
-    let system = SystemControl::new(peripherals.SYSTEM);
-    let clocks = ClockControl::boot_defaults(system.clock_control).freeze();
+    let peripherals = esp_hal::init(esp_hal::Config::default());
 
-    let timg0 = TimerGroup::new(peripherals.TIMG0, &clocks);
-    esp_hal_embassy::init(&clocks, timg0.timer0);
+    info!("Init!");
+    // RustRover shows error if I don't write full time here, that's weird
+    let timg0: TimerGroup<TIMG0, Blocking> = TimerGroup::new(peripherals.TIMG0);
+    esp_hal_embassy::init(timg0.timer0);
 
     spawner.spawn(run()).ok();
 
     loop {
-        // info!("Bing!");
+        info!("Bing!");
         Timer::after(Duration::from_millis(5_000)).await;
     }
 }
