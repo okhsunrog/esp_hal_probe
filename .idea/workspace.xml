@@ -7,8 +7,8 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b22105a-0bfb-4392-932c-cec93348d8e9" name="Changes" comment="Remove outdated comments and update task metadata&#10;&#10;Removed obsolete comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These changes include the removal of the static_cell dependency and cleanup of various project settings.">
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+    <list default="true" id="7b22105a-0bfb-4392-932c-cec93348d8e9" name="Changes" comment="Update comments and task metadata&#10;&#10;Removed outdated comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These updates also include the removal of the static_cell dependency and general cleanup of project settings.">
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +100,7 @@
       <updated>1725751529946</updated>
       <workItem from="1725751530671" duration="64000" />
       <workItem from="1725752698276" duration="5000" />
-      <workItem from="1725758634613" duration="1888000" />
+      <workItem from="1725758634613" duration="1927000" />
     </task>
     <task id="LOCAL-00001" summary="latest stable esp-hal + hello world">
       <option name="closed" value="true" />
@@ -134,17 +134,37 @@
       <option name="project" value="LOCAL" />
       <updated>1725760510812</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update comments and task metadata&#10;&#10;Removed outdated comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These updates also include the removal of the static_cell dependency and general cleanup of project settings.">
+      <option name="closed" value="true" />
+      <created>1725760534919</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1725760534919</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="latest stable esp-hal + hello world" />
     <MESSAGE value="latest git version of esp-hal + fix RustRover warnings + probe-rs&#10;use this command for installing working probe-rs:&#10;```&#10;cargo install probe-rs-tools \&#10;  --git https://github.com/probe-rs/probe-rs \&#10;  --rev 9bde591 --force --locked&#10;```" />
     <MESSAGE value="Remove static_cell dependency&#10;&#10;Removed the static_cell dependency from Cargo.toml and Cargo.lock. Also cleaned up comments and metadata in main.rs and updated .idea project settings." />
     <MESSAGE value="Remove outdated comments and update task metadata&#10;&#10;Removed obsolete comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These changes include the removal of the static_cell dependency and cleanup of various project settings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove outdated comments and update task metadata&#10;&#10;Removed obsolete comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These changes include the removal of the static_cell dependency and cleanup of various project settings." />
+    <MESSAGE value="Update comments and task metadata&#10;&#10;Removed outdated comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These updates also include the removal of the static_cell dependency and general cleanup of project settings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update comments and task metadata&#10;&#10;Removed outdated comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These updates also include the removal of the static_cell dependency and general cleanup of project settings." />
   </component>
 </project>
