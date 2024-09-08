@@ -1,14 +1,12 @@
 #![no_std]
 #![no_main]
 
+use defmt::info;
 use embassy_executor::Spawner;
 use embassy_time::{Duration, Timer};
-use defmt::info;
+use esp_hal::{peripherals::TIMG0, timer::timg::TimerGroup, Blocking};
 #[allow(unused)]
-use {esp_backtrace as _, defmt_rtt as _};
-use esp_hal::Blocking;
-use esp_hal::peripherals::TIMG0;
-use esp_hal::timer::timg::TimerGroup;
+use {defmt_rtt as _, esp_backtrace as _};
 
 #[embassy_executor::task]
 async fn run() {

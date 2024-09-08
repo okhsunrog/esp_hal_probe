@@ -7,7 +7,8 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b22105a-0bfb-4392-932c-cec93348d8e9" name="Changes" comment="Update comments and task metadata&#10;&#10;Removed outdated comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These updates also include the removal of the static_cell dependency and general cleanup of project settings.">
+    <list default="true" id="7b22105a-0bfb-4392-932c-cec93348d8e9" name="Changes" comment="Fix typo and update task metadata&#10;&#10;Corrected a typo in a comment in `main.rs` from &quot;full time&quot; to &quot;full type&quot;. Updated task metadata and comments in `.idea/workspace.xml` to reflect changes and ensure consistency.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,9 +48,13 @@
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "org.rust.first.attach.projects": "true",
+    "settings.editor.selected.configurable": "language.rust.cargo.check",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RsExternalLinterProjectSettings">
+    <option name="channel" value="nightly" />
+  </component>
   <component name="RunManager" selected="Cargo.Run esp_hal_probe">
     <configuration name="Run esp_hal_probe" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="buildProfileId" value="dev" />
@@ -90,6 +95,9 @@
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="/usr/bin" />
   </component>
+  <component name="RustfmtProjectSettings">
+    <option name="useRustfmt" value="true" />
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -100,7 +108,7 @@
       <updated>1725751529946</updated>
       <workItem from="1725751530671" duration="64000" />
       <workItem from="1725752698276" duration="5000" />
-      <workItem from="1725758634613" duration="1927000" />
+      <workItem from="1725758634613" duration="2055000" />
     </task>
     <task id="LOCAL-00001" summary="latest stable esp-hal + hello world">
       <option name="closed" value="true" />
@@ -142,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725760534919</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fix typo and update task metadata&#10;&#10;Corrected a typo in a comment in `main.rs` from &quot;full time&quot; to &quot;full type&quot;. Updated task metadata and comments in `.idea/workspace.xml` to reflect changes and ensure consistency.">
+      <option name="closed" value="true" />
+      <created>1725760574384</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725760574384</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +181,7 @@
     <MESSAGE value="Remove static_cell dependency&#10;&#10;Removed the static_cell dependency from Cargo.toml and Cargo.lock. Also cleaned up comments and metadata in main.rs and updated .idea project settings." />
     <MESSAGE value="Remove outdated comments and update task metadata&#10;&#10;Removed obsolete comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These changes include the removal of the static_cell dependency and cleanup of various project settings." />
     <MESSAGE value="Update comments and task metadata&#10;&#10;Removed outdated comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These updates also include the removal of the static_cell dependency and general cleanup of project settings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update comments and task metadata&#10;&#10;Removed outdated comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These updates also include the removal of the static_cell dependency and general cleanup of project settings." />
+    <MESSAGE value="Fix typo and update task metadata&#10;&#10;Corrected a typo in a comment in `main.rs` from &quot;full time&quot; to &quot;full type&quot;. Updated task metadata and comments in `.idea/workspace.xml` to reflect changes and ensure consistency." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix typo and update task metadata&#10;&#10;Corrected a typo in a comment in `main.rs` from &quot;full time&quot; to &quot;full type&quot;. Updated task metadata and comments in `.idea/workspace.xml` to reflect changes and ensure consistency." />
   </component>
 </project>
