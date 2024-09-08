@@ -7,7 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b22105a-0bfb-4392-932c-cec93348d8e9" name="Changes" comment="Remove static_cell dependency&#10;&#10;Removed the static_cell dependency from Cargo.toml and Cargo.lock. Also cleaned up comments and metadata in main.rs and updated .idea project settings.">
+    <list default="true" id="7b22105a-0bfb-4392-932c-cec93348d8e9" name="Changes" comment="Remove outdated comments and update task metadata&#10;&#10;Removed obsolete comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These changes include the removal of the static_cell dependency and cleanup of various project settings.">
       <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +21,9 @@
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="c4jj78ke" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -97,7 +100,7 @@
       <updated>1725751529946</updated>
       <workItem from="1725751530671" duration="64000" />
       <workItem from="1725752698276" duration="5000" />
-      <workItem from="1725758634613" duration="1863000" />
+      <workItem from="1725758634613" duration="1888000" />
     </task>
     <task id="LOCAL-00001" summary="latest stable esp-hal + hello world">
       <option name="closed" value="true" />
@@ -123,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725760460968</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Remove outdated comments and update task metadata&#10;&#10;Removed obsolete comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These changes include the removal of the static_cell dependency and cleanup of various project settings.">
+      <option name="closed" value="true" />
+      <created>1725760510812</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725760510812</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +144,7 @@
     <MESSAGE value="latest stable esp-hal + hello world" />
     <MESSAGE value="latest git version of esp-hal + fix RustRover warnings + probe-rs&#10;use this command for installing working probe-rs:&#10;```&#10;cargo install probe-rs-tools \&#10;  --git https://github.com/probe-rs/probe-rs \&#10;  --rev 9bde591 --force --locked&#10;```" />
     <MESSAGE value="Remove static_cell dependency&#10;&#10;Removed the static_cell dependency from Cargo.toml and Cargo.lock. Also cleaned up comments and metadata in main.rs and updated .idea project settings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove static_cell dependency&#10;&#10;Removed the static_cell dependency from Cargo.toml and Cargo.lock. Also cleaned up comments and metadata in main.rs and updated .idea project settings." />
+    <MESSAGE value="Remove outdated comments and update task metadata&#10;&#10;Removed obsolete comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These changes include the removal of the static_cell dependency and cleanup of various project settings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove outdated comments and update task metadata&#10;&#10;Removed obsolete comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These changes include the removal of the static_cell dependency and cleanup of various project settings." />
   </component>
 </project>
