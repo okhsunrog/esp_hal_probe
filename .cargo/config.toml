@@ -15,4 +15,4 @@ rustflags = [
 runner = "probe-rs run --chip=esp32c3"
 
 [unstable]
-build-std = ["core"]
+build-std = ["alloc", "core"]

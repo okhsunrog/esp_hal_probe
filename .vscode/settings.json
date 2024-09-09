@@ -1,9 +1,9 @@
 {
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "evenBetterToml.formatter.alignComments": true,
-  "evenBetterToml.formatter.alignEntries": true,
-  "evenBetterToml.formatter.arrayAutoExpand": true,
+  "evenBetterToml.formatter.alignEntries": false,
+  "evenBetterToml.formatter.arrayAutoExpand": false,
   "evenBetterToml.formatter.arrayTrailingComma": true,
-  "evenBetterToml.formatter.reorderArrays": true,
+  "evenBetterToml.formatter.reorderArrays": false,
   "rust-analyzer.checkOnSave.allTargets": false
 }
