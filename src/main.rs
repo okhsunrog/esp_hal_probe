@@ -1,10 +1,12 @@
 #![no_std]
 #![no_main]
 
-extern crate alloc;
+extern crate alloc; // do I need this?
 
+use bt_hci::controller::ExternalController;
 use defmt::{info, unwrap};
 use embassy_executor::Spawner;
+use embassy_sync::blocking_mutex::raw::NoopRawMutex;
 use embassy_time::{Duration, Timer};
 use esp_hal::{
     peripherals::TIMG0,
@@ -17,6 +19,14 @@ use esp_hal::{
 };
 use esp_wifi::{ble::controller::asynch::BleConnector, initialize, EspWifiInitFor};
 use static_cell::StaticCell;
+use trouble_host::{
+    advertise::{AdStructure, Advertisement, BR_EDR_NOT_SUPPORTED, LE_GENERAL_DISCOVERABLE},
+    attribute::{AttributeTable, CharacteristicProp, Service, Uuid},
+    Address,
+    BleHost,
+    BleHostResources,
+    PacketQos,
+};
 #[allow(unused)]
 use {defmt_rtt as _, esp_alloc as _, esp_backtrace as _};
 
@@ -36,18 +46,60 @@ async fn main(spawner: Spawner) {
 
     // RustRover shows error if I don't write full type here, that's weird
     let timg0: TimerGroup<TIMG0, Blocking> = TimerGroup::new(peripherals.TIMG0);
-    info!("esp-wifi initializing");
     let init = unwrap!(initialize(
         EspWifiInitFor::Ble,
         timg0.timer0,
         Rng::new(peripherals.RNG),
         peripherals.RADIO_CLK,
     ));
-    info!("BLE is initialized");
 
     let systimer = SystemTimer::new(peripherals.SYSTIMER).split::<Target>();
     esp_hal_embassy::init(systimer.alarm0);
-    info!("Embassy is initialized");
+
+    let mut bluetooth = peripherals.BT;
+    let connector = BleConnector::new(&init, &mut bluetooth);
+    let controller: ExternalController<_, 20> = ExternalController::new(connector);
+
+    static HOST_RESOURCES: StaticCell<BleHostResources<8, 8, 256>> = StaticCell::new();
+    let host_resources = HOST_RESOURCES.init(BleHostResources::new(PacketQos::None));
+
+    let mut ble: BleHost<'_, _> = BleHost::new(controller, host_resources);
+
+    ble.set_random_address(Address::random([0xFF, 0x9F, 0x1A, 0x05, 0xE4, 0xFF]));
+    let mut table: AttributeTable<'_, NoopRawMutex, 10> = AttributeTable::new();
+
+    let id = b"Trouble ESP32";
+    let appearance = [0x80, 0x07];
+    let mut bat_level = [0; 1];
+    // Generic Access Service (mandatory)
+    let mut svc = table.add_service(Service::new(0x1800));
+    let _ = svc.add_characteristic_ro(0x2A00, id);
+    let _ = svc.add_characteristic_ro(0x2A01, &appearance[..]);
+    svc.build();
+
+    // Generic attribute service (mandatory)
+    table.add_service(Service::new(0x1801));
+
+    // Battery service
+    let bat_level_handle = table.add_service(Service::new(0x180F)).add_characteristic(
+        0x2A19,
+        &[CharacteristicProp::Read, CharacteristicProp::Notify],
+        &mut bat_level,
+    );
+
+    let mut adv_data = [0; 31];
+    AdStructure::encode_slice(
+        &[
+            AdStructure::Flags(LE_GENERAL_DISCOVERABLE | BR_EDR_NOT_SUPPORTED),
+            AdStructure::ServiceUuids16(&[Uuid::Uuid16([0x0F, 0x18])]),
+            AdStructure::CompleteLocalName(b"Trouble ESP32"),
+        ],
+        &mut adv_data[..],
+    )
+    .unwrap();
+
+    let server = ble.gatt_server::<NoopRawMutex, 10, 256>(&table);
+
     spawner.spawn(run()).ok();
     info!("Running!");
 
