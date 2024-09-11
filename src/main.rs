@@ -30,7 +30,7 @@ async fn run() {
 
 #[esp_hal_embassy::main]
 async fn main(spawner: Spawner) {
-    esp_alloc::heap_allocator!(72 * 1024);
+    esp_alloc::heap_allocator!(128 * 1024);
     let peripherals = esp_hal::init(esp_hal::Config::default());
 
     // RustRover shows error if I don't write full type here, that's weird

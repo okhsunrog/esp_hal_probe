@@ -7,11 +7,8 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b22105a-0bfb-4392-932c-cec93348d8e9" name="Changes" comment="rustfmt">
-      <change beforePath="$PROJECT_DIR$/.cargo/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/.cargo/config.toml" afterDir="false" />
+    <list default="true" id="7b22105a-0bfb-4392-932c-cec93348d8e9" name="Changes" comment="Add BLE and allocator support&#10;&#10;Integrated BLE initialization and added `esp-alloc` for dynamic memory management. Updated `Cargo.toml` and `Cargo.lock` with necessary dependencies, and adjusted `main.rs` to accommodate BLE features and system timer initialization.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +110,7 @@
       <workItem from="1725751530671" duration="64000" />
       <workItem from="1725752698276" duration="5000" />
       <workItem from="1725758634613" duration="2173000" />
-      <workItem from="1726060750538" duration="2016000" />
+      <workItem from="1726060750538" duration="2234000" />
     </task>
     <task id="LOCAL-00001" summary="latest stable esp-hal + hello world">
       <option name="closed" value="true" />
@@ -171,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725760714925</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add BLE and allocator support&#10;&#10;Integrated BLE initialization and added `esp-alloc` for dynamic memory management. Updated `Cargo.toml` and `Cargo.lock` with necessary dependencies, and adjusted `main.rs` to accommodate BLE features and system timer initialization.">
+      <option name="closed" value="true" />
+      <created>1726062955204</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1726062955204</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +201,7 @@
     <MESSAGE value="Update comments and task metadata&#10;&#10;Removed outdated comments from `.vscode/settings.json` and updated task metadata in `.idea/workspace.xml`. These updates also include the removal of the static_cell dependency and general cleanup of project settings." />
     <MESSAGE value="Fix typo and update task metadata&#10;&#10;Corrected a typo in a comment in `main.rs` from &quot;full time&quot; to &quot;full type&quot;. Updated task metadata and comments in `.idea/workspace.xml` to reflect changes and ensure consistency." />
     <MESSAGE value="rustfmt" />
-    <option name="LAST_COMMIT_MESSAGE" value="rustfmt" />
+    <MESSAGE value="Add BLE and allocator support&#10;&#10;Integrated BLE initialization and added `esp-alloc` for dynamic memory management. Updated `Cargo.toml` and `Cargo.lock` with necessary dependencies, and adjusted `main.rs` to accommodate BLE features and system timer initialization." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add BLE and allocator support&#10;&#10;Integrated BLE initialization and added `esp-alloc` for dynamic memory management. Updated `Cargo.toml` and `Cargo.lock` with necessary dependencies, and adjusted `main.rs` to accommodate BLE features and system timer initialization." />
   </component>
 </project>
