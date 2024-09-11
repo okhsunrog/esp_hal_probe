@@ -4,6 +4,14 @@ version = "0.1.0"
 edition = "2021"
 rust-version = "1.81.0"
 
+[[bin]]
+name = "ble_test"
+# can also be just src/main.rs if only one binary is used
+path = "src/bin/ble_test.rs"
+test = false
+doctest = false
+bench = false
+
 [dependencies]
 bt-hci = { version = "0.1.1", features = ["defmt"] }
 defmt = "0.3"
