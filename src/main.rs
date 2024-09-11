@@ -18,8 +18,8 @@ async fn run() {
 
 #[esp_hal_embassy::main]
 async fn main(spawner: Spawner) {
+    info!("Before peripheral init");
     let peripherals = esp_hal::init(esp_hal::Config::default());
-
     info!("Init!");
     // RustRover shows error if I don't write full type here, that's weird
     let timg0: TimerGroup<TIMG0, Blocking> = TimerGroup::new(peripherals.TIMG0);
