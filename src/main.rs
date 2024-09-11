@@ -32,20 +32,24 @@ async fn run() {
 async fn main(spawner: Spawner) {
     esp_alloc::heap_allocator!(128 * 1024);
     let peripherals = esp_hal::init(esp_hal::Config::default());
+    info!("Initializing...");
 
     // RustRover shows error if I don't write full type here, that's weird
     let timg0: TimerGroup<TIMG0, Blocking> = TimerGroup::new(peripherals.TIMG0);
-
+    info!("esp-wifi initializing");
     let init = unwrap!(initialize(
         EspWifiInitFor::Ble,
         timg0.timer0,
         Rng::new(peripherals.RNG),
         peripherals.RADIO_CLK,
     ));
+    info!("BLE is initialized");
+
     let systimer = SystemTimer::new(peripherals.SYSTIMER).split::<Target>();
     esp_hal_embassy::init(systimer.alarm0);
-
+    info!("Embassy is initialized");
     spawner.spawn(run()).ok();
+    info!("Running!");
 
     loop {
         info!("Bing!");
