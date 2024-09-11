@@ -7,9 +7,9 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b22105a-0bfb-4392-932c-cec93348d8e9" name="Changes" comment="Increase heap allocator size to 128 KB&#10;&#10;Updated the heap allocator in `main.rs` from 72 KB to 128 KB to support additional memory requirements.">
+    <list default="true" id="7b22105a-0bfb-4392-932c-cec93348d8e9" name="Changes" comment="continue adding ble code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +123,7 @@
       <workItem from="1725752698276" duration="5000" />
       <workItem from="1725758634613" duration="2173000" />
       <workItem from="1726060750538" duration="5125000" />
-      <workItem from="1726079972152" duration="5464000" />
+      <workItem from="1726079972152" duration="6293000" />
     </task>
     <task id="LOCAL-00001" summary="latest stable esp-hal + hello world">
       <option name="closed" value="true" />
@@ -197,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726063067997</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="continue adding ble code">
+      <option name="closed" value="true" />
+      <created>1726096866141</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1726096866141</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +232,7 @@
     <MESSAGE value="rustfmt" />
     <MESSAGE value="Add BLE and allocator support&#10;&#10;Integrated BLE initialization and added `esp-alloc` for dynamic memory management. Updated `Cargo.toml` and `Cargo.lock` with necessary dependencies, and adjusted `main.rs` to accommodate BLE features and system timer initialization." />
     <MESSAGE value="Increase heap allocator size to 128 KB&#10;&#10;Updated the heap allocator in `main.rs` from 72 KB to 128 KB to support additional memory requirements." />
-    <option name="LAST_COMMIT_MESSAGE" value="Increase heap allocator size to 128 KB&#10;&#10;Updated the heap allocator in `main.rs` from 72 KB to 128 KB to support additional memory requirements." />
+    <MESSAGE value="continue adding ble code" />
+    <option name="LAST_COMMIT_MESSAGE" value="continue adding ble code" />
   </component>
 </project>
