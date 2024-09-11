@@ -16,6 +16,7 @@ esp-hal          = { version = "0.20", features = ["esp32c3", "defmt"] }
 esp-hal-embassy  = { version = "0.3",  features = ["esp32c3", "defmt"] }
 esp-wifi         = { version = "0.9",  default-features = false, features = ["defmt", "esp32c3", "ble", "async", "esp-alloc"] }
 trouble-host     = { default-features = false, features = ["defmt", "gatt" ], git = "https://github.com/embassy-rs/trouble", package = "trouble-host", rev = "d9d2e80b6b2ed6c3aeae1de534de557906353522"}
+static_cell      = { version = "2.1.0", features = ["nightly"] }
 
 [profile.release]
 codegen-units    = 1
