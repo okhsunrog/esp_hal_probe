@@ -9,7 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7b22105a-0bfb-4392-932c-cec93348d8e9" name="Changes" comment="more logs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/ble_test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/ble_test.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +128,7 @@
       <workItem from="1726079972152" duration="6753000" />
       <workItem from="1726097897780" duration="194000" />
       <workItem from="1726129226527" duration="250000" />
-      <workItem from="1726131666575" duration="7348000" />
+      <workItem from="1726131666575" duration="7911000" />
     </task>
     <task id="LOCAL-00001" summary="latest stable esp-hal + hello world">
       <option name="closed" value="true" />

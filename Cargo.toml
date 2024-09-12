@@ -61,11 +61,11 @@ overflow-checks = false
 
 [patch.crates-io]
 # Latest esp-hal
-esp-hal = { git = "https://github.com/esp-rs/esp-hal", rev = "b5152dcae582e59c66ef3fbaba74a735aa540518" }
-esp-hal-embassy = { git = "https://github.com/esp-rs/esp-hal", rev = "b5152dcae582e59c66ef3fbaba74a735aa540518" }
-esp-backtrace = { git = "https://github.com/esp-rs/esp-hal", rev = "b5152dcae582e59c66ef3fbaba74a735aa540518" }
-esp-wifi = { git = "https://github.com/esp-rs/esp-hal", rev = "b5152dcae582e59c66ef3fbaba74a735aa540518" }
-esp-alloc = { git = "https://github.com/esp-rs/esp-hal", rev = "b5152dcae582e59c66ef3fbaba74a735aa540518" }
+esp-hal = { git = "https://github.com/esp-rs/esp-hal", rev = "562c891ef9bfbb085755ba3029b6efabd9b72935" }
+esp-hal-embassy = { git = "https://github.com/esp-rs/esp-hal", rev = "562c891ef9bfbb085755ba3029b6efabd9b72935" }
+esp-backtrace = { git = "https://github.com/esp-rs/esp-hal", rev = "562c891ef9bfbb085755ba3029b6efabd9b72935" }
+esp-wifi = { git = "https://github.com/esp-rs/esp-hal", rev = "562c891ef9bfbb085755ba3029b6efabd9b72935" }
+esp-alloc = { git = "https://github.com/esp-rs/esp-hal", rev = "562c891ef9bfbb085755ba3029b6efabd9b72935" }
 
 # Latest embassy
 embassy-executor = { git = "https://github.com/embassy-rs/embassy.git", rev = "3d6a270" }
