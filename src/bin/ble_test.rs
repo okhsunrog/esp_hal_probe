@@ -4,8 +4,9 @@
 extern crate alloc; // do I need this?
 
 use bt_hci::controller::ExternalController;
-use defmt::{info, unwrap};
+use defmt::{info, unwrap, warn};
 use embassy_executor::Spawner;
+use embassy_futures::join::join3;
 use embassy_sync::blocking_mutex::raw::NoopRawMutex;
 use embassy_time::{Duration, Timer};
 use esp_hal::{
@@ -81,11 +82,14 @@ async fn main(spawner: Spawner) {
     table.add_service(Service::new(0x1801));
 
     // Battery service
-    let bat_level_handle = table.add_service(Service::new(0x180F)).add_characteristic(
-        0x2A19,
-        &[CharacteristicProp::Read, CharacteristicProp::Notify],
-        &mut bat_level,
-    );
+    let bat_level_handle = table
+        .add_service(Service::new(0x180F))
+        .add_characteristic(
+            0x2A19,
+            &[CharacteristicProp::Read, CharacteristicProp::Notify],
+            &mut bat_level,
+        )
+        .build();
 
     let mut adv_data = [0; 31];
     AdStructure::encode_slice(
@@ -103,8 +107,53 @@ async fn main(spawner: Spawner) {
     spawner.spawn(run()).ok();
     info!("Running!");
 
-    loop {
-        info!("Bing!");
-        Timer::after(Duration::from_millis(5_000)).await;
-    }
+    info!("Starting advertising and GATT service");
+    // Run all 3 tasks in a join. They can also be separate embassy tasks.
+    let _ = join3(
+        // Runs the BLE host task
+        ble.run(),
+        // Processing events from GATT server (if an attribute was written)
+        async {
+            loop {
+                match server.next().await {
+                    Ok(_event) => {
+                        info!("Gatt event!");
+                    }
+                    Err(e) => {
+                        warn!("Error processing GATT events: {:?}", e);
+                    }
+                }
+            }
+        },
+        // Advertise our presence to the world.
+        async {
+            loop {
+                let mut advertiser = ble
+                    .advertise(
+                        &Default::default(),
+                        Advertisement::ConnectableScannableUndirected {
+                            adv_data: &adv_data[..],
+                            scan_data: &[],
+                        },
+                    )
+                    .await
+                    .unwrap();
+                let conn = advertiser.accept().await.unwrap();
+                // Keep connection alive and notify with value change
+                let mut tick: u8 = 0;
+                loop {
+                    if !conn.is_connected() {
+                        break;
+                    }
+                    Timer::after(Duration::from_secs(1)).await;
+                    tick = tick.wrapping_add(1);
+                    server
+                        .notify(&ble, bat_level_handle, &conn, &[tick])
+                        .await
+                        .ok();
+                }
+            }
+        },
+    )
+    .await;
 }
