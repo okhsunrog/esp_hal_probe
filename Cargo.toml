@@ -10,13 +10,13 @@ defmt-rtt = "0.4"
 embassy-executor = { version = "0.6", features = ["defmt"] }
 embassy-time = { version = "0.3", features = ["generic-queue-8"] }
 esp-backtrace = { version = "0.14", features = [
-  "esp32c3",
+  "esp32s3",
   "defmt",
   "exception-handler",
   "panic-handler",
 ] }
-esp-hal = { version = "0.20", features = ["esp32c3", "defmt"] }
-esp-hal-embassy = { version = "0.3", features = ["esp32c3", "defmt"] }
+esp-hal = { version = "0.20", features = ["esp32s3", "defmt"] }
+esp-hal-embassy = { version = "0.3", features = ["esp32s3", "defmt"] }
 
 [profile.release]
 codegen-units = 1
@@ -31,4 +31,3 @@ overflow-checks = false
 esp-hal = { git = "https://github.com/esp-rs/esp-hal", rev = "f2e0211c1b7b0c181374c0e85ac209fa3ddca796" }
 esp-hal-embassy = { git = "https://github.com/esp-rs/esp-hal", rev = "f2e0211c1b7b0c181374c0e85ac209fa3ddca796" }
 esp-backtrace = { git = "https://github.com/esp-rs/esp-hal", rev = "f2e0211c1b7b0c181374c0e85ac209fa3ddca796" }
-

@@ -2,17 +2,14 @@
 DEFMT_LOG="info"
 
 [build]
-target    = "riscv32imc-unknown-none-elf"
+target    = "xtensa-esp32s3-none-elf"
 rustflags = [
   "-C", "link-arg=-Tdefmt.x",
-  "-C", "link-arg=-Tlinkall.x",
-  # NOTE: This is required to obtain backtraces, however it may negatively
-  #       impact the performance of your application.
-  "-C", "force-frame-pointers",
+  "-C", "link-arg=-nostartfiles",
 ]
 
-[target.riscv32imc-unknown-none-elf]
-runner = "probe-rs run --chip=esp32c3"
+[target.xtensa-esp32s3-none-elf]
+runner = "probe-rs run --chip=esp32s3"
 
 [unstable]
 build-std = ["core"]
