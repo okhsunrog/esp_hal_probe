@@ -42,7 +42,7 @@ embedded-io = { version = "0.6.1", features = ["defmt-03"] }
 trouble-host = { default-features = false, features = [
   "defmt",
   "gatt",
-], git = "https://github.com/embassy-rs/trouble", rev = "d9d2e80b6b2ed6c3aeae1de534de557906353522" }
+], git = "https://github.com/embassy-rs/trouble", rev = "1776fbf8b40c798fd911ca68d66e44b5fc98f3ce" }
 static_cell = { version = "2.1", features = ["nightly"] }
 
 [profile.dev]
@@ -61,15 +61,15 @@ overflow-checks = false
 
 [patch.crates-io]
 # Latest esp-hal
-esp-hal = { git = "https://github.com/esp-rs/esp-hal", rev = "562c891ef9bfbb085755ba3029b6efabd9b72935" }
-esp-hal-embassy = { git = "https://github.com/esp-rs/esp-hal", rev = "562c891ef9bfbb085755ba3029b6efabd9b72935" }
-esp-backtrace = { git = "https://github.com/esp-rs/esp-hal", rev = "562c891ef9bfbb085755ba3029b6efabd9b72935" }
-esp-wifi = { git = "https://github.com/esp-rs/esp-hal", rev = "562c891ef9bfbb085755ba3029b6efabd9b72935" }
-esp-alloc = { git = "https://github.com/esp-rs/esp-hal", rev = "562c891ef9bfbb085755ba3029b6efabd9b72935" }
+esp-hal = { git = "https://github.com/esp-rs/esp-hal", rev = "d9d771706f1612959a4d8526d28b0e39330aeec0" }
+esp-hal-embassy = { git = "https://github.com/esp-rs/esp-hal", rev = "d9d771706f1612959a4d8526d28b0e39330aeec0" }
+esp-backtrace = { git = "https://github.com/esp-rs/esp-hal", rev = "d9d771706f1612959a4d8526d28b0e39330aeec0" }
+esp-wifi = { git = "https://github.com/esp-rs/esp-hal", rev = "d9d771706f1612959a4d8526d28b0e39330aeec0" }
+esp-alloc = { git = "https://github.com/esp-rs/esp-hal", rev = "d9d771706f1612959a4d8526d28b0e39330aeec0" }
 
 # Latest embassy
-embassy-executor = { git = "https://github.com/embassy-rs/embassy.git", rev = "3d6a270" }
-embassy-sync = { git = "https://github.com/embassy-rs/embassy.git", rev = "3d6a270" }
-embassy-futures = { git = "https://github.com/embassy-rs/embassy.git", rev = "3d6a270" }
-embassy-time = { git = "https://github.com/embassy-rs/embassy.git", rev = "3d6a270" }
-embassy-time-driver = { git = "https://github.com/embassy-rs/embassy.git", rev = "3d6a270" }
+embassy-executor = { git = "https://github.com/embassy-rs/embassy.git", rev = "cdb44f1272e9264324cc866ee2d141301e968e10" }
+embassy-sync = { git = "https://github.com/embassy-rs/embassy.git", rev = "cdb44f1272e9264324cc866ee2d141301e968e10" }
+embassy-futures = { git = "https://github.com/embassy-rs/embassy.git", rev = "cdb44f1272e9264324cc866ee2d141301e968e10" }
+embassy-time = { git = "https://github.com/embassy-rs/embassy.git", rev = "cdb44f1272e9264324cc866ee2d141301e968e10" }
+embassy-time-driver = { git = "https://github.com/embassy-rs/embassy.git", rev = "cdb44f1272e9264324cc866ee2d141301e968e10" }
