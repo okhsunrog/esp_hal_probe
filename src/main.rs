@@ -23,27 +23,13 @@ async fn main(spawner: Spawner) {
     let channels = rtt_init! {
         up: {
             0: {
-                size: 512,
-                mode: BlockIfFull,
-            }
-            1: {
-                size: 512,
-                mode: BlockIfFull,
-            }
-            2: {
-                size: 2048,
-                mode: BlockIfFull,
-            }
-        }
-        down: {
-            0: {
-                size: 512,
-                mode: BlockIfFull,
+                size: 1024,
+                name: "defmt",
             }
         }
     };
     rtt_target::set_defmt_channel(channels.up.0);
-    rtt_target::set_print_channel(channels.up.1);
+    // rtt_target::set_print_channel(channels.up.1);
     info!("Init!");
     // RustRover shows error if I don't write full type here, that's weird
     let timg0: TimerGroup<TIMG0, Blocking> = TimerGroup::new(peripherals.TIMG0);
