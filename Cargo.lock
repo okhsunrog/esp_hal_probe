@@ -148,16 +148,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "defmt-rtt"
-version = "0.4.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bab697b3dbbc1750b7c8b821aa6f6e7f2480b47a99bc057a2ed7b170ebef0c51"
-dependencies = [
- "critical-section",
- "defmt",
-]
-
-[[package]]
 name = "delegate"
 version = "0.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -579,12 +569,12 @@ name = "esp_hal_probe"
 version = "0.1.0"
 dependencies = [
  "defmt",
- "defmt-rtt",
  "embassy-executor",
  "embassy-time",
  "esp-backtrace",
  "esp-hal",
  "esp-hal-embassy",
+ "rtt-target",
 ]
 
 [[package]]
@@ -872,6 +862,17 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "rtt-target"
+version = "0.6.0"
+source = "git+https://github.com/probe-rs/rtt-target#5b7603b6114bb08385f71674b9d962471c221681"
+dependencies = [
+ "critical-section",
+ "defmt",
+ "portable-atomic",
+ "ufmt-write",
 ]
 
 [[package]]
