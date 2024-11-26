@@ -1,8 +1,8 @@
 [package]
-name         = "esp_hal_probe"
-version      = "0.1.0"
-edition      = "2021"
-rust-version = "1.76.0"
+name = "esp_hal_probe"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80.0"
 
 [dependencies]
 defmt = "0.3"
@@ -15,19 +15,14 @@ esp-backtrace = { version = "0.14.2", features = [
   "exception-handler",
   "panic-handler",
 ] }
-esp-hal = { version = "0.21.1", features = ["defmt", "esp32c3"] }
-esp-hal-embassy = { version = "0.4", features = ["defmt", "esp32c3"] }
+esp-hal = { version = "0.22.0", features = ["defmt", "esp32c3"] }
+esp-hal-embassy = { version = "0.5", features = ["defmt", "esp32c3"] }
 
 [profile.release]
-codegen-units    = 1
-debug            = 2
+codegen-units = 1
+debug = 2
 debug-assertions = false
-incremental      = false
-opt-level        = 3
-lto              = 'fat'
-overflow-checks  = false
-
-[patch.crates-io]
-esp-hal         = { git = "https://github.com/esp-rs/esp-hal", rev = "b7224ef4c934f02e2dd229d1ceed024a132784d4" }
-esp-hal-embassy = { git = "https://github.com/esp-rs/esp-hal", rev = "b7224ef4c934f02e2dd229d1ceed024a132784d4" }
-esp-backtrace   = { git = "https://github.com/esp-rs/esp-hal", rev = "b7224ef4c934f02e2dd229d1ceed024a132784d4" }
+incremental = false
+opt-level = 3
+lto = 'fat'
+overflow-checks = false
