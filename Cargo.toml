@@ -37,7 +37,6 @@ esp-wifi = { version = "0.11", features = [
 trouble-example-apps = { path = "./trouble/examples/apps" }
 
 
-
 [profile.dev]
 # Rust debug is too slow.
 # For debug builds always builds with some optimization
@@ -54,11 +53,11 @@ overflow-checks = false
 
 [patch.crates-io]
 # Latest esp-hal
-# esp-hal = { git = "https://github.com/esp-rs/esp-hal", rev = "d9d771706f1612959a4d8526d28b0e39330aeec0" }
-# esp-hal-embassy = { git = "https://github.com/esp-rs/esp-hal", rev = "d9d771706f1612959a4d8526d28b0e39330aeec0" }
-# esp-backtrace = { git = "https://github.com/esp-rs/esp-hal", rev = "d9d771706f1612959a4d8526d28b0e39330aeec0" }
-# esp-wifi = { git = "https://github.com/esp-rs/esp-hal", rev = "d9d771706f1612959a4d8526d28b0e39330aeec0" }
-# esp-alloc = { git = "https://github.com/esp-rs/esp-hal", rev = "d9d771706f1612959a4d8526d28b0e39330aeec0" }
+esp-hal = { git = "https://github.com/esp-rs/esp-hal", rev = "eec75c8f82efda9a2f537cc17cdfc5d4cdc092aa" }
+esp-hal-embassy = { git = "https://github.com/esp-rs/esp-hal", rev = "eec75c8f82efda9a2f537cc17cdfc5d4cdc092aa" }
+esp-backtrace = { git = "https://github.com/esp-rs/esp-hal", rev = "eec75c8f82efda9a2f537cc17cdfc5d4cdc092aa" }
+esp-wifi = { git = "https://github.com/esp-rs/esp-hal", rev = "eec75c8f82efda9a2f537cc17cdfc5d4cdc092aa" }
+esp-alloc = { git = "https://github.com/esp-rs/esp-hal", rev = "eec75c8f82efda9a2f537cc17cdfc5d4cdc092aa" }
 
 # Latest embassy
 embassy-executor = { git = "https://github.com/embassy-rs/embassy.git", rev = "37111a891ca0e55efc6326e518f423e5fc677839" }
