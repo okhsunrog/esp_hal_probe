@@ -18,6 +18,7 @@ use {defmt_rtt as _, esp_alloc as _, esp_backtrace as _};
 async fn run() {
     loop {
         info!("Hello world from embassy using esp-hal-async!");
+        // replace the log with blinking led?
         Timer::after(Duration::from_millis(2_000)).await;
     }
 }
