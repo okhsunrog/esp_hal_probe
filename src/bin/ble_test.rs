@@ -1,16 +1,11 @@
 #![no_std]
 #![no_main]
 
-mod ble_bas_peripheral;
-
-extern crate alloc; // do I need this?
-
 use bt_hci::controller::ExternalController;
 use defmt::info;
 use embassy_executor::Spawner;
 use embassy_time::{Duration, Timer};
 use esp_hal::{
-    prelude::*,
     peripherals::TIMG0,
     rng::Rng,
     timer::{
@@ -19,8 +14,8 @@ use esp_hal::{
     },
     Blocking,
 };
-use esp_wifi::{ble::controller::BleConnector, init};
-use static_cell::make_static;
+use esp_wifi::ble::controller::BleConnector;
+use trouble_example_apps::ble_bas_peripheral;
 #[allow(unused)]
 use {defmt_rtt as _, esp_alloc as _, esp_backtrace as _};
 
@@ -39,12 +34,12 @@ async fn main(_s: Spawner) {
 
     // RustRover shows error if I don't write full type here, that's weird
     let timg0: TimerGroup<TIMG0, Blocking> = TimerGroup::new(peripherals.TIMG0);
-    let init = &*make_static!(init(
+    let init = esp_wifi::init(
         timg0.timer0,
         Rng::new(peripherals.RNG),
         peripherals.RADIO_CLK,
     )
-    .unwrap());
+    .unwrap();
 
     let systimer = SystemTimer::new(peripherals.SYSTIMER).split::<Target>();
     esp_hal_embassy::init(systimer.alarm0);
