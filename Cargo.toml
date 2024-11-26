@@ -1,5 +1,5 @@
 [package]
-name         = "esp_hal_probe"
+name         = "esp_hal_snippets"
 version      = "0.1.0"
 edition      = "2021"
 rust-version = "1.76.0"
